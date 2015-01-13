@@ -120,7 +120,11 @@ func GetSize(fd int) (width, height int, err error) {
 	if e != 0 {
 		return 0, 0, error(e)
 	}
-	return int(info.size.x), int(info.size.y), nil
+
+	x := int(info.window.right-info.window.left) + 1
+	y := int(info.window.bottom-info.window.top) + 1
+
+	return x, y, nil
 }
 
 // ReadPassword reads a line of input from a terminal without local echo.  This
