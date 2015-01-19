@@ -12,7 +12,7 @@ import (
 	"net"
 	"net/http"
 
-	"golang.org/x/crypto/ssh/terminal"
+	"github.com/bitbored/crypto/ssh/terminal"
 )
 
 func ExampleNewServerConn() {

@@ -6,6 +6,7 @@ package terminal
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"sync"
 	"unicode/utf8"
@@ -428,6 +429,7 @@ func visualLength(runes []rune) int {
 // handleKey processes the given key and, optionally, returns a line of text
 // that the user has entered.
 func (t *Terminal) handleKey(key rune) (line string, ok bool) {
+	fmt.Println("Handle key")
 	if t.pasteActive && key != keyEnter {
 		t.addKeyToLine(key)
 		return
@@ -472,6 +474,7 @@ func (t *Terminal) handleKey(key rune) (line string, ok bool) {
 		t.pos = len(t.line)
 		t.moveCursorToPos(t.pos)
 	case keyUp:
+		fmt.Println("key up")
 		entry, ok := t.history.NthPreviousEntry(t.historyIndex + 1)
 		if !ok {
 			return "", false

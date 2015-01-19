@@ -21,8 +21,8 @@ import (
 	"testing"
 	"text/template"
 
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/testdata"
+	"github.com/bitbored/crypto/ssh"
+	"github.com/bitbored/crypto/ssh/testdata"
 )
 
 const sshd_config = `
